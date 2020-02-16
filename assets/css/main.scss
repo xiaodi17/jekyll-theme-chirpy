@@ -475,12 +475,15 @@ footer>.d-flex>div {
   width: 350px;
 }
 
-footer .copyright a,
-footer .license a {
+footer .footer-left a,
+footer .footer-right a {
   font-weight: 600;
-  color: inherit;
+  color: var(---footer-link, inherit);
 }
 
+footer .footer-right {
+  text-align: right;
+}
 
 /*--- Panels ---*/
 
@@ -859,9 +862,10 @@ table tbody td {
   text-decoration: none;
 }
 
-div.tooltip-inner { /* Overrided BS4 Tooltip */
+.tooltip-inner { /* Overrided BS4 Tooltip */
   font-size: .7rem;
   max-width: 220px;
+  text-align: left;
 }
 
 .disabled {
@@ -883,10 +887,6 @@ div.tooltip-inner { /* Overrided BS4 Tooltip */
 /*--- Responsive Design ---*/
 
 @media all and (max-width: 576px) {
-
-  #main-wrapper {
-    padding-bottom: 10rem; /* footer height */
-  }
 
   #main>div.row:first-child>div:first-child {
     min-height: calc(100vh - 3rem - 10rem); /* topbar is 3rem and footer is 10rem */
@@ -922,16 +922,17 @@ div.tooltip-inner { /* Overrided BS4 Tooltip */
     word-wrap: break-word;
   }
 
-  /* footer and #main-wrapper expand vertical */
-  footer {
-    height: 10rem;
-  }
-
   footer>div.d-flex {
+    padding: .7rem 0;
     flex-wrap: wrap;
     justify-content: left!important;
     -ms-flex-pack: distribute!important;
     justify-content: space-around!important;
+  }
+
+  footer .footer-left,
+  footer .footer-right {
+    text-align: center;
   }
 
 }
